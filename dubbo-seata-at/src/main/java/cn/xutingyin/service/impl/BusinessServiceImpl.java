@@ -1,9 +1,7 @@
 package cn.xutingyin.service.impl;
 
-import org.apache.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import cn.xutingyin.service.BusinessService;
 import cn.xutingyin.service.OrderService;
@@ -18,11 +16,9 @@ import io.seata.spring.annotation.GlobalTransactional;
  *     -Djava.net.preferIPv4Stack=true
  * </pre>
  */
-@Component
-@Service(interfaceClass = BusinessService.class, timeout = 10000)
 public class BusinessServiceImpl implements BusinessService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BusinessService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BusinessServiceImpl.class);
     private StorageService storageService;
     private OrderService orderService;
 
