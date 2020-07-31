@@ -18,7 +18,7 @@ public class DubboBusinessTester {
          */
         ClassPathXmlApplicationContext context =
             new ClassPathXmlApplicationContext(new String[] {"spring/dubbo-business.xml"});
-        final BusinessService business = (BusinessService)context.getBean("businessService");
+        BusinessService business = (BusinessService)context.getBean("businessService");
         business.purchase("U100001", "C00321", 2);
     }
 }

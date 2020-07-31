@@ -22,16 +22,6 @@ public class BusinessServiceImpl implements BusinessService {
     private StorageService storageService;
     private OrderService orderService;
 
-    @GlobalTransactional(timeoutMills = 400000, name = "dubbo-demo-tx")
-    @Override
-    public void purchase(String userId, String commodityCode, int orderCount) {
-        LOGGER.info("purchase begin ... xid: " + RootContext.getXID());
-        storageService.deduct(commodityCode, orderCount);
-        orderService.create(userId, commodityCode, orderCount);
-        // throw new RuntimeException("xxx");
-
-    }
-
     public void setStorageService(StorageService storageService) {
         this.storageService = storageService;
     }
@@ -44,6 +34,16 @@ public class BusinessServiceImpl implements BusinessService {
      */
     public void setOrderService(OrderService orderService) {
         this.orderService = orderService;
+    }
+
+    @GlobalTransactional(timeoutMills = 400000, name = "dubbo-demo-tx")
+    @Override
+    public void purchase(String userId, String commodityCode, int orderCount) {
+        LOGGER.info("purchase begin ... xid: " + RootContext.getXID());
+        storageService.deduct(commodityCode, orderCount);
+        orderService.create(userId, commodityCode, orderCount);
+        // throw new RuntimeException("xxx");
+
     }
 
 }
