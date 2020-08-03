@@ -1,11 +1,14 @@
-package cn.xutingyin.service.impl;
+package cn.xutingyin.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
-import cn.xutingyin.service.BusinessService;
-import cn.xutingyin.service.OrderService;
-import cn.xutingyin.service.StorageService;
+import com.alibaba.dubbo.config.annotation.Service;
+
+import cn.xutingyin.BusinessService;
+import cn.xutingyin.OrderService;
+import cn.xutingyin.StorageService;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
 
@@ -16,6 +19,8 @@ import io.seata.spring.annotation.GlobalTransactional;
  *     -Djava.net.preferIPv4Stack=true
  * </pre>
  */
+@Service
+@Component
 public class BusinessServiceImpl implements BusinessService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BusinessServiceImpl.class);

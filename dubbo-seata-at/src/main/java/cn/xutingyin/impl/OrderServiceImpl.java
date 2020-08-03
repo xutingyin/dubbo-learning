@@ -1,4 +1,4 @@
-package cn.xutingyin.service.impl;
+package cn.xutingyin.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,10 +10,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Component;
 
+import com.alibaba.dubbo.config.annotation.Service;
+
+import cn.xutingyin.AccountService;
+import cn.xutingyin.OrderService;
 import cn.xutingyin.entity.Order;
-import cn.xutingyin.service.AccountService;
-import cn.xutingyin.service.OrderService;
 import io.seata.core.context.RootContext;
 
 /**
@@ -23,6 +26,8 @@ import io.seata.core.context.RootContext;
  *     -Djava.net.preferIPv4Stack=true
  * </pre>
  */
+@Service
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderService.class);

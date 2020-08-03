@@ -1,12 +1,18 @@
-package cn.xutingyin.service.impl;
+package cn.xutingyin.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
-import cn.xutingyin.service.AccountService;
+import com.alibaba.dubbo.config.annotation.Service;
+
+import cn.xutingyin.AccountService;
 import io.seata.core.context.RootContext;
 
+@Service
+@Component
 public class AccountServiceImpl implements AccountService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountService.class);
 
@@ -18,6 +24,7 @@ public class AccountServiceImpl implements AccountService {
      * @param jdbcTemplate
      *            the jdbc template
      */
+    @Autowired
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }

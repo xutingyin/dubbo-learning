@@ -2,7 +2,7 @@ package cn.xutingyin.starter;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.xutingyin.service.BusinessService;
+import cn.xutingyin.BusinessService;
 
 public class DubboBusinessTester {
     /**
