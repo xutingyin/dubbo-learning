@@ -15,5 +15,5 @@
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880"/>
     <!-- 引用服务 -->
-    <dubbo:reference id="providerService" check="false" interface="cn.xutingyin.service.ProviderService"/>
+    <dubbo:reference id="providerService" check="false" interface="cn.xutingyin.ProviderService"/>
 </beans>

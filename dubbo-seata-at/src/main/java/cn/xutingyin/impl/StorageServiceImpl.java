@@ -1,11 +1,10 @@
 package cn.xutingyin.impl;
 
+import org.apache.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-
-import com.alibaba.dubbo.config.annotation.Service;
 
 import cn.xutingyin.StorageService;
 import io.seata.core.context.RootContext;

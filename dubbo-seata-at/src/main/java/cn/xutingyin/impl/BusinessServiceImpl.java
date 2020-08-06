@@ -1,10 +1,9 @@
 package cn.xutingyin.impl;
 
+import org.apache.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import com.alibaba.dubbo.config.annotation.Service;
 
 import cn.xutingyin.BusinessService;
 import cn.xutingyin.OrderService;
@@ -45,8 +44,12 @@ public class BusinessServiceImpl implements BusinessService {
     @Override
     public void purchase(String userId, String commodityCode, int orderCount) {
         LOGGER.info("purchase begin ... xid: " + RootContext.getXID());
-        storageService.deduct(commodityCode, orderCount);
-        orderService.create(userId, commodityCode, orderCount);
+        try {
+            storageService.deduct(commodityCode, orderCount);
+            orderService.create(userId, commodityCode, orderCount);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // throw new RuntimeException("xxx");
 
     }

@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://code.alibabatech.com/schema/dubbo
-	   http://code.alibabatech.com/schema/dubbo/dubbo.xsd
-       http://www.springframework.org/schema/context
+        http://dubbo.apache.org/schema/dubbo
+	    http://dubbo.apache.org/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <bean name="accountDataSource" class="com.alibaba.druid.pool.DruidDataSource"
@@ -46,11 +45,11 @@
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
     <dubbo:registry address="multicast://224.5.6.7:1234?unicast=false"/>
     <!--support etcd -->
-    <!--<dubbo:registry address="etcd3://127.0.0.1:2379/org.apache.dubbo.registry.RegistryService" />-->
+    <!--<dubbo:registry address="etcd3://10.1.5.81:2379/org.apache.dubbo.registry.RegistryService" />-->
     <!--support zk-->
-    <dubbo:registry address="zookeeper://10.1.5.81:2181"/>
+    <!--    <dubbo:registry address="zookeeper://10.1.5.81:2181"/>-->
     <!--support nacos-->
-    <!--<dubbo:registry address="nacos://127.0.0.1:8848"/>-->
+    <dubbo:registry address="nacos://10.1.5.81:8848"/>
     <dubbo:protocol name="dubbo" port="20880"/>
     <dubbo:service interface="cn.xutingyin.AccountService" ref="accountService" timeout="10000"/>
 

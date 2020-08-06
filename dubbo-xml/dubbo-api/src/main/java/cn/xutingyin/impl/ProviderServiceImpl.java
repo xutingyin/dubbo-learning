@@ -1,6 +1,6 @@
-package cn.xutingyin.service.impl;
+package cn.xutingyin.impl;
 
-import cn.xutingyin.service.ProviderService;
+import cn.xutingyin.ProviderService;
 
 public class ProviderServiceImpl implements ProviderService {
     @Override

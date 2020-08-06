@@ -1,4 +1,4 @@
-package cn.xutingyin.service;
+package cn.xutingyin;
 
 public interface ProviderService {
 
