@@ -30,7 +30,7 @@
         <property name="logAbandoned" value="true"/>
         <property name="filters" value="mergeStat"/>
     </bean>
-
+    <!--数据源代理 DataSourceProxy 为AT模式-->
     <bean id="storageDataSourceProxy" class="io.seata.rm.datasource.DataSourceProxy">
         <constructor-arg ref="storageDataSource"/>
     </bean>
