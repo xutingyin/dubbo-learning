@@ -1,10 +1,8 @@
 package cn.xutingyin.impl;
 
-import org.apache.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 
 import cn.xutingyin.StorageService;
 import io.seata.core.context.RootContext;
@@ -16,8 +14,6 @@ import io.seata.core.context.RootContext;
  *     -Djava.net.preferIPv4Stack=true
  * </pre>
  */
-@Service
-@Component
 public class StorageServiceImpl implements StorageService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StorageServiceImpl.class);

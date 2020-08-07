@@ -1,9 +1,7 @@
 package cn.xutingyin.impl;
 
-import org.apache.dubbo.config.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import cn.xutingyin.BusinessService;
 import cn.xutingyin.OrderService;
@@ -18,8 +16,6 @@ import io.seata.spring.annotation.GlobalTransactional;
  *     -Djava.net.preferIPv4Stack=true
  * </pre>
  */
-@Service
-@Component
 public class BusinessServiceImpl implements BusinessService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BusinessServiceImpl.class);
@@ -50,7 +46,8 @@ public class BusinessServiceImpl implements BusinessService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // throw new RuntimeException("xxx");
+        // 出现异常时，全局事务回滚
+        // throw new RuntimeException("异常了...");
 
     }
 
