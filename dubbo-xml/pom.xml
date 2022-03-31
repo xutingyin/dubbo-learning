@@ -19,7 +19,7 @@
         <module>dubbo-api</module>
     </modules>
     <properties>
-        <spring-framework-version>5.2.7.RELEASE</spring-framework-version>
+        <spring-framework-version>5.3.18</spring-framework-version>
         <zookeeper-version>3.4.6</zookeeper-version>
         <dubbo-version>2.6.5</dubbo-version>
         <lombok-version>1.18.12</lombok-version>
